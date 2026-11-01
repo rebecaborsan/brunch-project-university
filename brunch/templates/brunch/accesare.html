@@ -1,0 +1,3 @@
+{% extends 'brunch/baza.html' %}
+{% block title %}Accesarea {{ accesare.id }}{% endblock %}
+{% block content %}<div class="info-heading"><h1>Accesarea {{ accesare.id }}</h1></div><section class="info-card"><dl><dt>ID</dt><dd>{{ accesare.id }}</dd><dt>IP client</dt><dd>{{ accesare.ip_client }}</dd><dt>URL complet</dt><dd>{{ accesare.string_url }}</dd><dt>Pagina</dt><dd>{{ accesare.pagina }}</dd><dt>Parametri</dt><dd>{{ accesare.lista_parametri }}</dd></dl>{{ accesare.calculeaza_data }}</section><a class="back-link" href="{% url 'brunch:log' %}">Înapoi la jurnal</a>{% endblock %}

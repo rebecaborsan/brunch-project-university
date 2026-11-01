@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+db.sqlite3
+.DS_Store
+database.ini
+media/
+.env
+documentatie/
+CONTEXT_PROIECT.txt

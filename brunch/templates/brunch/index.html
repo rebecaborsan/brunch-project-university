@@ -1,0 +1,25 @@
+{% extends 'brunch/baza.html' %}
+{% load static %}
+{% block content %}
+<section class="hero" id="bun-venit">
+  <div class="hero-copy">
+    <p class="eyebrow">UN PIC DE SOARE ÎN FIECARE ZI</p>
+    <h1>Brunch &amp; Bloom</h1>
+    <p class="intro">Dimineți lente.<br>Farfurii pline de culoare.</p>
+    <p class="hero-note">Cafea, ceva bun și timp pentru tine. Așa începe o dimineață pe gustul nostru.</p>
+    <a class="button" href="#despre">Descoperă proiectul <span aria-hidden="true">↗</span></a>
+  </div>
+  <img class="brunch-image" src="{% static 'brunch/imagini/brunch.webp' %}" alt="Preparate de brunch cu ouă, toasturi și legume pe o masă din lemn">
+</section>
+<section class="about" id="despre">
+  <div><p class="eyebrow">DESPRE PROIECT</p><h2>Un loc pentru<br>pofte matinale.</h2></div>
+  <p>{{ descriere }}</p>
+</section>
+<section id="selectii"><h2>Selecții de brunch</h2><div class="categories">
+  <div><span aria-hidden="true">01 /</span><h2>Ceva sărat</h2><p>Ouă Benedict &amp; toasturi cu avocado</p></div>
+  <div><span aria-hidden="true">02 /</span><h2>Ceva dulce</h2><p>Clătite &amp; boluri cu iaurt și fructe</p></div>
+  <div><span aria-hidden="true">03 /</span><h2>O pauză bună</h2><p>Cafea, ceai &amp; sucuri naturale</p></div>
+</div></section>
+<section class="about" id="program"><div><p class="eyebrow">NE VEDEM LA BRUNCH</p><h2>Programul localului</h2></div><div><p>Luni - vineri: 08:00 - 16:00<br>Sâmbătă - duminică: 09:00 - 17:00</p><p>Program propus pentru localul din proiect.</p></div></section>
+<section class="about" id="valori"><div><p class="eyebrow">CE CONTEAZĂ PENTRU NOI</p><h2>Simplu și bun.</h2></div><p>Ne dorim preparate proaspete, ingrediente de sezon și un loc în care fiecare pauză să fie una plăcută. Meniul va include atât opțiuni dulci, cât și sărate sau vegetariene.</p></section>
+{% endblock %}

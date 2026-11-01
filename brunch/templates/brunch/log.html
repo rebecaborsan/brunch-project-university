@@ -1,0 +1,15 @@
+{% extends 'brunch/baza.html' %}
+{% block title %}Jurnalul accesărilor{% endblock %}
+{% block content %}
+<div class="info-heading"><p class="eyebrow">ACTIVITATEA SITE-ULUI</p><h1>Jurnalul accesărilor</h1><p>Accesările din sesiunea curentă a serverului, inclusiv această pagină.</p></div>
+{% if coloane %}
+<div class="table-scroll"><table><thead><tr>{% for coloana in coloane %}<th scope="col">{{ coloana }}</th>{% endfor %}</tr></thead><tbody>{% for rand in randuri %}<tr>{% for valoare in rand.valori %}<td>{% if forloop.first %}<a href="{% url 'brunch:accesare' id=rand.id %}">{{ valoare }}</a>{% else %}{{ valoare }}{% endif %}</td>{% endfor %}</tr>{% empty %}<tr><td colspan="{{ coloane|length }}">Nu există accesări de afișat.</td></tr>{% endfor %}</tbody></table></div>
+{% else %}
+<ul class="access-list">{% for accesare in accesari %}<li><a href="{% url 'brunch:accesare' id=accesare.id %}">Accesarea {{ accesare.id }}</a><p>Pagina: {{ accesare.pagina }} | IP: {{ accesare.ip_client }}</p><p class="url-text">URL: {{ accesare.string_url }}</p><p>Parametri: {{ accesare.lista_parametri }}</p>{{ accesare.calculeaza_data }}</li>{% empty %}<li>Nu există accesări de afișat.</li>{% endfor %}</ul>
+{% endif %}
+{% for eroare in erori %}<p class="error">{{ eroare }}</p>{% endfor %}
+<section class="info-card"><h2>Frecvența paginilor</h2><p>Cele mai puțin accesate ({{ minim }}): {{ putine|join:", " }}</p><p>Cele mai accesate ({{ maxim }}): {{ multe|join:", " }}</p></section>
+{% if mod == 'nr' %}<section class="info-card"><h2>Numărul de accesări</h2><p>{{ total }} accesări de la pornirea serverului.</p></section>{% endif %}
+{% if mod == 'detalii' %}<section class="info-card"><h2>Data și ora accesărilor</h2><ul>{% for detaliu in detalii %}<li>Accesarea {{ detaliu.id }}: {{ detaliu.moment }}</li>{% empty %}<li>Nu există accesări de afișat.</li>{% endfor %}</ul></section>{% endif %}
+<section class="info-card"><h2>Parametri</h2><p>Număr de parametri primiți: {{ nr_parametri }} (inclusiv aparițiile repetate).</p><p>Nume: {{ parametri|join:", "|default:"Niciun parametru" }}</p></section>
+{% endblock %}

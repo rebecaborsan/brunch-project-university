@@ -1,0 +1,15 @@
+{% extends 'brunch/baza.html' %}
+{% block title %}Informații despre server{% endblock %}
+{% block content %}
+<div class="info-heading"><p class="eyebrow">BRUNCH &amp; BLOOM / INFO</p><h1>Informații despre server</h1><p>O privire la ceas, înainte de următoarea cafea.</p></div>
+<div class="info-card">
+  <span class="clock-icon" aria-hidden="true">◷</span>
+  {{ sectiune_data }}
+  <nav class="filters" aria-label="Formatul datei și orei">
+    <a href="{% url 'brunch:info' %}" {% if mod != 'zi' and mod != 'timp' %}aria-current="page"{% endif %}>Data și ora</a>
+    <a href="{% url 'brunch:info' %}?data=zi" {% if mod == 'zi' %}aria-current="page"{% endif %}>Doar data</a>
+    <a href="{% url 'brunch:info' %}?data=timp" {% if mod == 'timp' %}aria-current="page"{% endif %}>Doar ora</a>
+  </nav>
+</div>
+<a class="back-link" href="{% url 'brunch:index' %}">← Înapoi la pagina principală</a>
+{% endblock %}

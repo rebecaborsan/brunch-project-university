@@ -1,0 +1,33 @@
+{% extends 'brunch/baza.html' %}
+{% load static %}
+{% block title %}Despre noi{% endblock %}
+{% block content %}
+<div class="info-heading local-heading">
+  <p class="eyebrow">POVESTEA LOCALULUI</p>
+  <h1>Despre noi</h1>
+  <p>Un brunch bun începe cu timp pentru tine.</p>
+</div>
+<section class="local-story">
+  <img class="local-photo" src="{% static 'brunch/imagini/local.webp' %}" alt="Interiorul unui local de brunch, cu o masă lângă fereastră și plante">
+  <div class="local-copy">
+    <p class="eyebrow">BUN VENIT LA BRUNCH &amp; BLOOM</p>
+    <h2>Un loc pentru dimineți liniștite</h2>
+    <p class="local-lead">Pentru cafeaua savurată pe îndelete, conversațiile care se prelungesc și micul dejun care poate aștepta până la prânz.</p>
+    <p>Brunch &amp; Bloom a pornit de la o idee simplă: să existe un loc în care să te poți opri din agitația zilei și să te bucuri de ceva bun. Ne imaginăm mese lângă fereastră, lumină caldă, plante și farfurii pline de culoare.</p>
+    <p>Poți veni la o cafea, la o întâlnire cu prietenii sau pentru o pauză doar a ta. Ne dorim o atmosferă relaxată, în care să te simți bine de la prima înghițitură de cafea până la ultima bucățică de toast.</p>
+    <div class="local-note"><span aria-hidden="true">✳</span><p>Dimineți cu gust, în ritmul tău.<br><small>Aceasta este ideea din spatele localului nostru.</small></p></div>
+  </div>
+</section>
+<section class="local-food">
+  <div class="local-food-heading">
+    <div><p class="eyebrow">DULCE, SĂRAT ȘI O CAFEA BUNĂ</p><h2>Ce punem în farfurie</h2></div>
+    <p>Meniul propus aduce împreună preparate pentru pofte diferite. De la un mic dejun consistent la ceva dulce, fiecare alegere își găsește locul la masa de brunch.</p>
+  </div>
+  <div class="local-food-cards">
+    <article><span class="eyebrow">01 / CEVA SĂRAT</span><h3>Un început pe gustul tău</h3><p>Ouă Benedict, toasturi cu avocado și combinații cu legume. Preparate pentru zilele în care ai poftă de un brunch sățios și colorat.</p></article>
+    <article><span class="eyebrow">02 / CEVA DULCE</span><h3>O pauză mai dulce</h3><p>Clătite, boluri cu iaurt și fructe, texturi cremoase și toppinguri crocante. Pentru un răsfăț de dimineață sau un desert împărțit cu cineva drag.</p></article>
+    <article><span class="eyebrow">03 / ÎN CEAȘCA TA</span><h3>Mai stăm la o cafea?</h3><p>Cafea, ceai și sucuri naturale care însoțesc preparatele din meniu. Uneori, o băutură bună este tot ce îți trebuie pentru o pauză plăcută.</p></article>
+  </div>
+  <p class="local-details">În meniul online vor fi prezentate ingredientele, alergenii, gramajul și prețul fiecărui preparat, ca să poți alege ușor ce ți se potrivește.</p>
+</section>
+{% endblock %}

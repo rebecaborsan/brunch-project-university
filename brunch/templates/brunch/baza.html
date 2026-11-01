@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Brunch &amp; Bloom{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'brunch/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'brunch/css/nav.css' %}">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="{% url 'brunch:index' %}"><span class="brand-mark" aria-hidden="true">✳</span> Brunch &amp; Bloom</a>
+    <nav aria-label="Navigare principală">
+      <ul class="menu">
+        <li><a href="{% url 'brunch:index' %}">Acasă</a>
+          <ul class="submenu">
+            <li><a href="{% url 'brunch:index' %}#bun-venit">Bun venit</a></li>
+            <li><a href="{% url 'brunch:index' %}#despre">Proiectul nostru</a></li>
+            <li><a href="{% url 'brunch:index' %}#selectii">Selecții de brunch</a></li>
+            <li><a href="{% url 'brunch:index' %}#program">Program</a></li>
+            <li><a href="{% url 'brunch:index' %}#valori">Valorile noastre</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'brunch:despre' %}">Localul</a>
+          <ul class="submenu">
+            <li><a href="{% url 'brunch:despre' %}">Despre noi</a></li>
+            <li><a href="{% url 'brunch:istoric' %}">Istoric</a></li>
+            <li><a href="{% url 'brunch:evenimente' %}">Evenimente</a></li>
+            <li><a href="{% url 'brunch:contact' %}">Contact</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'brunch:produse' %}">Produse</a>
+          <ul class="submenu">
+            <li><a href="{% url 'brunch:produse' %}">Toate produsele</a></li>
+            <li><a href="{% url 'brunch:meniu_sezon' %}">Meniu de sezon</a></li>
+            <li><a href="{% url 'brunch:cos_virtual' %}">Coș virtual</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'brunch:info' %}">Informații</a>
+          <ul class="submenu">
+            <li><a href="{% url 'brunch:info' %}">Informații despre server</a></li>
+            <li><a href="{% url 'brunch:log' %}">Jurnalul accesărilor</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>
+    <div><strong>{{ firma.nume }}</strong><br>{{ firma.specific }}<br>Din {{ firma.an_infiintare }}</div>
+    <div>{{ firma.adresa }}<br>{{ firma.telefon }}<br>{{ firma.email }}</div>
+    <div>Adresa IP: {{ request.ip_client }}<br>&copy; {{ an_curent }} {{ firma.nume }}<br>Toate drepturile rezervate.</div>
+  </footer>
+</body>
+</html>
